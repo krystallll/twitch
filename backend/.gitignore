@@ -2,3 +2,4 @@
 /src/test/
 /src/main/webapp/
 .idea
+/target/
