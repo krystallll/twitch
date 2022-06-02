@@ -170,7 +170,7 @@ public class GameService {
         return videos;
     }
 
-    private List<Item> searchByType(String gameId, ItemType type, int limit){
+    public List<Item> searchByType(String gameId, ItemType type, int limit){
         List<Item> items = new ArrayList<>();
         switch (type){
             case STREAM:
@@ -182,6 +182,10 @@ public class GameService {
             case CLIP:
                 items = searchClips(gameId,limit);
                 break;
+        }
+
+        for (Item item : items) {
+            item.setGameId(gameId);
         }
         return items;
     }
